@@ -32,8 +32,14 @@ cd Injector
 ## Build DLL 
 - This is a main payload which will contain the actual cheat. For now, i haven't finished with the cheat engine, only appears message box when you type F1 -> F12 keys. 
 - To build this, goto DLL-1 folder and chose 'DLL-1.sln'
+
+```
+cd DLL-1
+```
 - Do the same above unless this time, the output DLL will be in `DLL-1\Release`
 - Copy the `DLL-1.dll` into `/Injector/Debug/Injector.exe`, change filename to `cheat-32bit.dll` and run the `Injector.exe` 
+
+
 ![alt text](Images/image1.png)
 
 # Remember 
