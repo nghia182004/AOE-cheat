@@ -1,0 +1,37 @@
+# Build results
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.log
+*.suo
+
+# Visual Studio specific
+.vs/
+*.user
+*.filters
+
+# Backup & temporary files
+*.tmp
+*.log
+*.bak
+*.ncb
+*.opendb
+*.VC.db
+*.sqlite
+
+# Debug and Release folders
+Debug/
+Release/
+x64/
+x86/
+
+# IDE-specific files
+*.VC.db
+*.sln.docstates
+
+# Others
+*.ipch
+*.pch
