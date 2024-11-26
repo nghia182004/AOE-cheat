@@ -145,6 +145,7 @@ void banner() {
         "====================================================================\n"
         "Author: Kiendt19\n"
         "====================================================================\n");
+        printf("[!!] REMEMBER TO START THE GAME, START IT NOW THEN PROCEED");
         printf("[+] Press <ENTER> to start");
         getchar();
 }
