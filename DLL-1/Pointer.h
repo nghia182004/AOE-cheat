@@ -35,7 +35,7 @@ struct memory_ptr {
 struct memory_ptr resource_hack_ptr = {
     0x00188144,
     6,
-    {0x110, 0x224, 0xc, 0x40, 0x14, 0x500}    // Offset to get at food resource
+    {0x110, 0x224, 0xc, 0x40, 0x14, 0x500}    // Offset to get at food resource for address bouncing 
 };
 
 
