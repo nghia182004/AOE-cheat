@@ -1,3 +1,4 @@
+using System;
 using System.Windows.Forms;
 
 namespace mysoftware
@@ -5,6 +6,19 @@ namespace mysoftware
     public partial class Form1 : Form
     {
         private string currentSelection = "Civilian"; // Track current DomainUpDown selection
+
+        // Civilian data storage
+        private string civilianAttackValue;
+        private string civilianHpValue;
+        private string civilianSpeedValue;
+        private string civilianCSpeedValue;
+
+        // Fishing Boat data storage
+        private string fishingBoatAttackValue;
+        private string fishingBoatHpValue;
+        private string fishingBoatSpeedValue;
+        private string fishingBoatCSpeedValue;
+
         private RadioButton[] civilianRadioButtons; // Array for "Civilian" RadioButtons
         private RadioButton[] fishingBoatRadioButtons; // Array for "Fishing Boat" RadioButtons
         private RadioButton selectedCivilianRadioButton; // To store the selected Civilian RadioButton
@@ -83,23 +97,45 @@ namespace mysoftware
             if (currentSelection == "Civilian")
             {
                 selectedCivilianRadioButton = GetSelectedRadioButton(civilianRadioButtons);
+                // Save current Civilian values
+                civilianAttackValue = AttackValue.Text;
+                civilianHpValue = HpValue.Text;
+                civilianSpeedValue = Speed.Value.ToString();
+                civilianCSpeedValue = CSpeed.Value.ToString();
             }
             else if (currentSelection == "Fishing Boat")
             {
                 selectedFishingBoatRadioButton = GetSelectedRadioButton(fishingBoatRadioButtons);
+                // Save current Fishing Boat values
+                fishingBoatAttackValue = AttackValue.Text;
+                fishingBoatHpValue = HpValue.Text;
+                fishingBoatSpeedValue = Speed.Value.ToString();
+                fishingBoatCSpeedValue = CSpeed.Value.ToString();
             }
         }
 
         private void RestoreSavedSelection()
         {
             // Restore the saved RadioButton selection for the current domain
-            if (currentSelection == "Civilian" && selectedCivilianRadioButton != null)
+            if (currentSelection == "Civilian")
             {
-                selectedCivilianRadioButton.Checked = true;
+                if (selectedCivilianRadioButton != null)
+                    selectedCivilianRadioButton.Checked = true;
+                // Restore Civilian values
+                AttackValue.Text = civilianAttackValue;
+                HpValue.Text = civilianHpValue;
+                Speed.Value = int.TryParse(civilianSpeedValue, out var spd) ? spd : 0;
+                CSpeed.Value = int.TryParse(civilianCSpeedValue, out var cspd) ? cspd : 0;
             }
-            else if (currentSelection == "Fishing Boat" && selectedFishingBoatRadioButton != null)
+            else if (currentSelection == "Fishing Boat")
             {
-                selectedFishingBoatRadioButton.Checked = true;
+                if (selectedFishingBoatRadioButton != null)
+                    selectedFishingBoatRadioButton.Checked = true;
+                // Restore Fishing Boat values
+                AttackValue.Text = fishingBoatAttackValue;
+                HpValue.Text = fishingBoatHpValue;
+                Speed.Value = int.TryParse(fishingBoatSpeedValue, out var spd) ? spd : 0;
+                CSpeed.Value = int.TryParse(fishingBoatCSpeedValue, out var cspd) ? cspd : 0;
             }
         }
 
@@ -115,9 +151,63 @@ namespace mysoftware
             return null;
         }
 
+        // Event Handlers for AttackValue, HpValue, Speed, CSpeed changes
+        private void AttackValue_TextChanged_1(object sender, EventArgs e)
+        {
+            if (currentSelection == "Civilian")
+            {
+                civilianAttackValue = AttackValue.Text;
+            }
+            else if (currentSelection == "Fishing Boat")
+            {
+                fishingBoatAttackValue = AttackValue.Text;
+            }
+        }
+
+        private void HpValue_TextChanged_1(object sender, EventArgs e)
+        {
+            if (currentSelection == "Civilian")
+            {
+                civilianHpValue = HpValue.Text;
+            }
+            else if (currentSelection == "Fishing Boat")
+            {
+                fishingBoatHpValue = HpValue.Text;
+            }
+        }
+
+        private void Speed_ValueChanged(object sender, EventArgs e)
+        {
+            if (currentSelection == "Civilian")
+            {
+                civilianSpeedValue = Speed.Value.ToString();
+            }
+            else if (currentSelection == "Fishing Boat")
+            {
+                fishingBoatSpeedValue = Speed.Value.ToString();
+            }
+        }
+
+        private void CSpeed_ValueChanged(object sender, EventArgs e)
+        {
+            if (currentSelection == "Civilian")
+            {
+                civilianCSpeedValue = CSpeed.Value.ToString();
+            }
+            else if (currentSelection == "Fishing Boat")
+            {
+                fishingBoatCSpeedValue = CSpeed.Value.ToString();
+            }
+        }
+
+        // Other existing event handlers can remain unchanged.
+    
 
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+
+
+
+private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             // Logic for radioButton1 (if needed)
         }
@@ -226,15 +316,7 @@ namespace mysoftware
 
         }
 
-        private void HpValue_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AttackValue_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void textBox10_TextChanged(object sender, EventArgs e)
         {
@@ -256,15 +338,7 @@ namespace mysoftware
 
         }
 
-        private void Speed_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CSpeed_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {

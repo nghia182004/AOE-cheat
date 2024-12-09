@@ -44,8 +44,8 @@
             button8 = new Button();
             textBox2 = new TextBox();
             button2 = new Button();
-            numericUpDown1 = new NumericUpDown();
-            numericUpDown2 = new NumericUpDown();
+            Speed = new NumericUpDown();
+            CSpeed = new NumericUpDown();
             checkBox6 = new CheckBox();
             checkBox5 = new CheckBox();
             radioButton5 = new RadioButton();
@@ -73,8 +73,8 @@
             tabControl1 = new TabControl();
             tabPage1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Speed).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CSpeed).BeginInit();
             tabControl1.SuspendLayout();
             SuspendLayout();
             // 
@@ -170,8 +170,8 @@
             tableLayoutPanel1.Controls.Add(button8, 2, 3);
             tableLayoutPanel1.Controls.Add(textBox2, 0, 0);
             tableLayoutPanel1.Controls.Add(button2, 2, 0);
-            tableLayoutPanel1.Controls.Add(numericUpDown1, 1, 2);
-            tableLayoutPanel1.Controls.Add(numericUpDown2, 1, 3);
+            tableLayoutPanel1.Controls.Add(Speed, 1, 2);
+            tableLayoutPanel1.Controls.Add(CSpeed, 1, 3);
             tableLayoutPanel1.Location = new Point(309, 213);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
@@ -293,22 +293,22 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // numericUpDown1
+            // Speed
             // 
-            numericUpDown1.Anchor = AnchorStyles.None;
-            numericUpDown1.Location = new Point(143, 79);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(135, 27);
-            numericUpDown1.TabIndex = 12;
-            numericUpDown1.ValueChanged += Speed_ValueChanged;
+            Speed.Anchor = AnchorStyles.None;
+            Speed.Location = new Point(143, 79);
+            Speed.Name = "Speed";
+            Speed.Size = new Size(135, 27);
+            Speed.TabIndex = 12;
+            Speed.ValueChanged += Speed_ValueChanged;
             // 
-            // numericUpDown2
+            // CSpeed
             // 
-            numericUpDown2.Location = new Point(143, 114);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(135, 27);
-            numericUpDown2.TabIndex = 13;
-            numericUpDown2.ValueChanged += CSpeed_ValueChanged;
+            CSpeed.Location = new Point(143, 114);
+            CSpeed.Name = "CSpeed";
+            CSpeed.Size = new Size(135, 27);
+            CSpeed.TabIndex = 13;
+            CSpeed.ValueChanged += CSpeed_ValueChanged;
             // 
             // checkBox6
             // 
@@ -596,8 +596,8 @@
             tabPage1.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Speed).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CSpeed).EndInit();
             tabControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -645,7 +645,7 @@
         private Button button8;
         private TextBox textBox2;
         private Button button2;
-        private NumericUpDown numericUpDown1;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDown Speed;
+        private NumericUpDown CSpeed;
     }
 }
