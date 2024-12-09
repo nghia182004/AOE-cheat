@@ -1,5 +1,5 @@
 # Description
-Reverse Engineering And Create Cheat for Age Of Empiresx: Rise of Rome using External cheat
+Reverse Engineering And Create Cheat for Age Of Empiresx: Rise of Rome using Internal Cheat
 
 Game: [https://drive.google.com/file/d/1ZMkLpNDD7IBv4YrNMFRMx8gqCtR5C4I1/view?usp=sharing]
 
